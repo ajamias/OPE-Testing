@@ -1,7 +1,7 @@
 name: health check
 on:
   push:
-    branches: base-ope-image
+    branches: "*"
 jobs:
   health-check:
     runs-on: ubuntu-latest #use the latest ubuntu container image 
