@@ -25,7 +25,7 @@ jobs:
           REGISTRY=$(cat base/ope_book_registry)
           REGISTRY_USER=$(cat base/ope_book_user)
           docker login $REGISTRY -u $REGISTRY_USER -p $REGISTRY_PASSWORD
-          docker push quay.io/gaheyrich/ope:beta-ope
+          docker push quay.io/ajamias/ope:beta-ope
           #make push
       - name: Show Debug info
         run: |
