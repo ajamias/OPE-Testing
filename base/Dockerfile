@@ -16,6 +16,7 @@ LABEL maintainer="Open Education <opeffort@gmail.com>"
 ARG ADDITIONAL_DISTRO_PACKAGES
 ARG PYTHON_PREREQ_VERSIONS
 ARG PYTHON_INSTALL_PACKAGES
+ARG PIP_INSTALL_PACKAGES
 
 # Fix: https://github.com/hadolint/hadolint/wiki/DL4006
 # Fix: https://github.com/koalaman/shellcheck/wiki/SC3014
@@ -47,6 +48,7 @@ RUN conda install --quiet --yes conda=23.3.1 python=3.9.16 --no-pin && \
     conda install --quiet --yes ${PYTHON_PREREQ_VERSIONS} && \
     conda install --quiet --yes ${PYTHON_INSTALL_PACKAGES} && \
     #mamba install --quiet --yes jupyter_contrib_nbextensions=0.7.0 && \
+    pip install ${PIP_INSTALL_PACKAGES} && \
     pip install nbclient==0.5.13 && \
     pip install jupyterlab_rise && \
     fix-permissions "${CONDA_DIR}" && \
